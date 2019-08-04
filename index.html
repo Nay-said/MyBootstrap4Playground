@@ -5,37 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Bootstrap Playground</title>
+    <title>Bootstrap Playground</title>  <!-- By Nay_said (Hengyu Shi) -->
     <style>
         body {
             background: #ecfcff;
-        }
-        h3 {
-            margin: 10px 0px;
+            padding-top: 80px;
         }
         .row {
             text-align: center;
         }
+        .col {
+            margin: 5px 0px;
+            background-color: #f9fce1;
+            font-size: 6px;
+            font-weight: bold;
+        }
         .col-xl-12 {
             color: #525252 ;
         }
-        .col-md-4, .col-md-8 {
+        .col-sm-4, .col-lg-8 {
             background-color: #b2fcff;
         }
-        .col-sm-3 {
+        .style1 {
             background-color: #d3f6f3;
         }
-        .col-md-3 {
+        .style2 {
             background-color: #f9fce1;
         }
-        .col-lg-3 {
+        .style3 {
             background-color: #fee9b2;
         }
-        .col-xl-3 {
+        .style4 {
             background-color: #fbd1b7;
         }
+        .col-md-2 p{
+            padding-left: 5px;
+        }
         .grid {
-            margin: 10px 0px;
+            margin: 5px 0px;
             border: 0.1px solid grey;
         }
         .lorem {
@@ -46,70 +53,139 @@
             text-align: left;
             color: grey;
         }
-        .col-sm-2 p {
-            text-align: center;
+        .nested_div{
+            background-color: #b2fcff;
+        }
+        .nested_div p {
+            text-align: left;
+        }
+        .footer {
+            bottom: 0;
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
+            background-color: #f5f5f5;
         }
     </style>
 </head>
+
 <body>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xl-12">
-                <h3>Bootstrap 4 Grid System Playground</h3>
+    <div class="container">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top"> 
+            <h5 class="navbar-brand pl-5">Bootstrap 4 Playground</h5>
+            <p class="text-white mt-2 mr-5"><small><em>By Hengyu Shi</em></small></p>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav mr-auto">
+                <li class="nav-item active"> <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> </li>
+                <li class="nav-item"> <a class="nav-link" href="#">Link</a> </li>
+                <li class="nav-item"> <a class="nav-link disabled" href="#">Disabled</a> </li>
+                <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01"> <a class="dropdown-item" href="#">Action</a> <a class="dropdown-item" href="#">Another action</a> <a class="dropdown-item" href="#">Something else here</a> </div>
+                </li>
+                </ul>
             </div>
+        </nav>
+
+        <div class="row">
+            <div class="col-1 col border">col-1</div>
+            <div class="col-2 col border">col-2</div>
+            <div class="col-4 col border">col-4</div>
+            <div class="col-5 col border">col-5</div>
         </div>
         <div class="row">
-            <div class="col-md-4 grid">col-md-4</div>
-            <div class="col-md-8 grid">col-md-8</div>
+            <div class="col-sm-4 grid">col-sm-4</div>
+            <div class="col-lg-8 grid">col-lg-8</div>
         </div>
         <div class="row">
-            <div class="col-sm-3 grid">col-sm-3</div>
-            <div class="col-sm-3 grid">col-sm-3</div>
-            <div class="col-sm-3 grid">col-sm-3</div>
-            <div class="col-sm-3 grid">col-sm-3</div>
+            <div class="col-sm-3 grid style1">col-sm-3</div>
+            <div class="col-sm-3 grid style1">col-sm-3</div>
+            <div class="col-sm-3 grid style1">col-sm-3</div>
+            <div class="col-sm-3 grid style1">col-sm-3</div>
         </div>
         <div class="row">
-            <div class="col-md-3 grid">col-md-3</div>
-            <div class="col-md-3 grid">col-md-3</div>
-            <div class="col-md-3 grid">col-md-3</div>
-            <div class="col-md-3 grid">col-md-3</div>
+            <div class="col-md-3 grid style2">col-md-3</div>
+            <div class="col-md-3 grid style2">col-md-3</div>
+            <div class="col-md-3 grid style2">col-md-3</div>
+            <div class="col-md-3 grid style2">col-md-3</div>
         </div>
         <div class="row">
-           <div class="col-lg-3 grid">col-lg-3</div>
-           <div class="col-lg-3 grid">col-lg-3</div>
-           <div class="col-lg-3 grid">col-lg-3</div>
-           <div class="col-lg-3 grid">col-lg-3</div>
+           <div class="col-lg-3 grid style3">col-lg-3</div>
+           <div class="col-lg-3 grid style3">col-lg-3</div>
+           <div class="col-lg-3 grid style3">col-lg-3</div>
+           <div class="col-lg-3 grid style3">col-lg-3</div>
         </div>
         <div class="row">
-            <div class="col-xl-3 grid">col-xl-3</div>
-            <div class="col-xl-3 grid">col-xl-3</div>
-            <div class="col-xl-3 grid">col-xl-3</div>
-            <div class="col-xl-3 grid">col-xl-3</div>
+            <div class="col-xl-3 grid style4">col-xl-3</div>
+            <div class="col-xl-3 grid style4">col-xl-3</div>
+            <div class="col-xl-3 grid style4">col-xl-3</div>
+            <div class="col-xl-3 grid style4">col-xl-3</div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 col-lg-3 grid style3">col-md-6 col-lg-3</div>
+            <div class="col-md-6 col-lg-3 grid style3">col-md-6 col-lg-3</div>
+            <div class="col-md-6 col-lg-3 grid style3">col-md-6 col-lg-3</div>
+            <div class="col-md-6 col-lg-3 grid style3">col-md-6 col-lg-3</div>
         </div>
         <div class="row">
-            <div class="col-sm-2 grid lorem">
-                <h6>col-sm-2</h6>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, modi.</p>
+            <div class="col-lg-6 col-md-3 grid style2">col-lg-6 col-md-3</div>
+            <div class="col-lg-6 col-md-3 grid style2">col-lg-6 col-md-3</div>
+            <div class="col-lg-6 col-md-3 grid style2">col-lg-6 col-md-3</div>
+            <div class="col-lg-6 col-md-3 grid style2">col-lg-6 col-md-3</div>
+        </div>
+        <div class="row">
+            <div class="col-md style1 border">col-md auto flex</div>
+            <div class="col-md style1 border">col-md auto flex</div>
+            <div class="col-md style1 border">col-md auto flex</div>
+        </div>
+
+        <!-- Nested Columns -->
+        <div class="row my-2 nested_div">
+            <div class="col-sm-6 border py-3">
+                <h6>div 1 .col-sm-6</h6>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid vel, at eos, nostrum consectetur exercitationem sed, dolorem corrupti eveniet magni tenetur dolore repellendus minima maiores totam mollitia! Quisquam impedit beatae tempora qui incidunt possimus. Ducimus fugiat nesciunt, in dicta adipisci labore sapiente provident? Quam, hic corporis rem et quae ullam.</p>
             </div>
-            <div class="col-sm-2 grid lorem">
-                <h6>col-sm-2</h6>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, modi!</p>
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-12 border">
+                        <h6>div 2 .col-12</h6>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias esse iure quia eos nobis non ipsa maiores, consequatur incidunt asperiores dolore aut quis iusto facilis?</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 border">
+                        <h6>div 3 .col-12</h6>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, similique. Dignissimos cupiditate exercitationem iste! Molestias at ipsam fuga sequi modi voluptas iusto molestiae veritatis culpa.</p>
+                    </div>
+                </div>
             </div>
-            <div class="col-sm-2 grid lorem">
-                <h6>col-sm-2</h6>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur, expedita.</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-2 grid lorem">
+                <h6>col-md-2</h6>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius excepturi omnis similique quae, nesciunt delectus?</p>
             </div>
-            <div class="col-sm-2 grid lorem">
-                <h6>col-sm-2</h6>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, suscipit?</p>
+            <div class="col-md-2 grid lorem">
+                <h6>col-md-2</h6>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit adipisci odio atque nesciunt fugit sequi.</p>
             </div>
-            <div class="col-sm-2 grid lorem">
-                <h6>col-sm-2</h6>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi, saepe?</p>
+            <div class="col-md-2 grid lorem">
+                <h6>col-md-2</h6>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut soluta corrupti incidunt dignissimos libero dolorum.</p>
             </div>
-            <div class="col-sm-2 grid lorem">
-                <h6>col-sm-2</h6>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus, eligendi!</p>
+            <div class="col-md-2 grid lorem">
+                <h6>col-md-2</h6>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid voluptate est labore, suscipit optio laudantium?</p>
+            </div>
+            <div class="col-md-2 grid lorem">
+                <h6>col-md-2</h6>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, facere earum voluptates dolores laborum soluta.</p>
+            </div>
+            <div class="col-md-2 grid lorem">
+                <h6>col-md-2</h6>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet dignissimos nulla soluta necessitatibus, at nihil?</p>
             </div>
         </div>
         <div class="row">
@@ -123,6 +199,11 @@
             </div>
         </div>
     </div>
+    <footer class="footer bg-dark mt-2">
+        <div class="container"> 
+            <span class="text-muted"><i>Hengyu Shi 2019</i></span>  <span class="text-muted ml-5">All Rights Reserved</span>
+        </div>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
