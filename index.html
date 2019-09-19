@@ -7,9 +7,27 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Bootstrap Playground</title>  <!-- By Nay_said (Hengyu Shi) -->
     <style>
+        @include media-breakpoint-up(sm) {
+            html {
+                font-size: 1.2rem;
+            }
+        }
+        @include media-breakpoint-up(md) {
+            html {
+                font-size: 1.4rem;
+            }
+        }
+        @include media-breakpoint-up(lg) {
+            html {
+                font-size: 1.6rem;
+            }
+        }
+        html {
+            font-size: 1rem;
+        }
         body {
             background: #ecfcff;
-            padding-top: 80px;
+            padding-top: 50px;
         }
         .row {
             text-align: center;
@@ -17,7 +35,7 @@
         .col {
             margin: 5px 0px;
             background-color: #f9fce1;
-            font-size: 6px;
+            font-size: 8px;
             font-weight: bold;
         }
         .col-xl-12 {
@@ -59,6 +77,9 @@
         .nested_div p {
             text-align: left;
         }
+        .tab-pane {
+            min-height: 500px;
+        }
         .footer {
             bottom: 0;
             width: 100%;
@@ -66,26 +87,59 @@
             line-height: 60px;
             background-color: #f5f5f5;
         }
+        #BootstrapLogo {
+            width: 900px;
+            height: 276px;
+        }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top"> 
-            <h5 class="navbar-brand pl-5">Bootstrap 4 Playground</h5>
-            <p class="text-white mt-2 mr-5"><small><em>By Hengyu Shi</em></small></p>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
-            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-                <ul class="navbar-nav mr-auto">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top"> 
+        <h1 class="navbar-brand mr-3 pt-1 my-0">Bootstrap 4 Playground</h1>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation"> 
+            <span class="navbar-toggler-icon"></span> 
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
                 <li class="nav-item active"> <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> </li>
                 <li class="nav-item"> <a class="nav-link" href="#">Link</a> </li>
-                <li class="nav-item"> <a class="nav-link disabled" href="#">Disabled</a> </li>
                 <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown01"> <a class="dropdown-item" href="#">Action</a> <a class="dropdown-item" href="#">Another action</a> <a class="dropdown-item" href="#">Something else here</a> </div>
                 </li>
-                </ul>
+                <li class="nav-item"> <a class="nav-link disabled" href="#">This is a fixed-top nav bar</a> </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="jumbotron jumbotron-fluid bg-secondary text-white">
+        <div class="container">
+            <div class="row text-left">
+                <div class="col-xl-6">
+                    <h1>Welcome to Bootstrap 4 Playground</h1><br>
+                    <p>This is <i>.jumbotron-fluid</i></p>
+                    <p>Feel free to play around, enjoy!</p>
+                    <hr>
+                    <p>By Hengyu Shi</p>
+                </div>
+                <div class="col-xl-6">
+                    <p class="text-white-50"><i>A glance of weather: </i></p>
+                    <div class="mb-3">
+                        <iframe width="500" height="300" src="https://embed.windy.com/embed2.html?lat=-36.607&lon=175.221&zoom=7&level=surface&overlay=wind&menu=&message=&marker=&calendar=&pressure=&type=map&location=coordinates&detail=&detailLat=-38.438&detailLon=172.993&metricWind=default&metricTemp=default&radarRange=-1" frameborder="0"></iframe>
+                    </div>
+                </div>
             </div>
-        </nav>
+        </div>
+    </div>
+
+    <div class="container">
+        
+        <div class="alert alert-info alert-dismissible" role="alert">
+            <strong>Col demo below</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-lable="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
 
         <div class="row">
             <div class="col-1 col border">col-1</div>
@@ -198,7 +252,103 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem amet quidem at porro excepturi sequi illum impedit maiores sit iusto earum, iste ea provident aut necessitatibus quis, quia iure! Facilis atque quae dolorem, eaque iure magni natus libero illum temporibus ex ipsa quisquam non voluptas, corporis quod officia dignissimos fugit!</p>
             </div>
         </div>
+
+        <!-- Pane -->
+        <div class="alert alert-info alert-dismissible mt-3" role="alert">
+            <strong>Pane demo below</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-lable="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+
+        <div class="my-2 p-3 bg-light">
+            <nav class="nav justify-content-center nav-pills flex-column flex-md-row">
+                <a href="#tab1" class="nav-link active" data-toggle="tab">Tab 1</a>
+                <a href="#tab2" class="nav-link" data-toggle="tab">Tab 2</a>
+                <a href="#tab3" class="nav-link" data-toggle="tab">Tab 3</a>
+                <a href="#tab4" class="nav-link" data-toggle="tab">Tab 4</a>
+                <a href="#tab5" class="nav-link" data-toggle="tab">Tab 5</a>
+            </nav>
+            <div class="tab-content my-2">
+                <div class="tab-pane active" id="tab1">
+                    <h3 class="text-center">Pane 1</h3><hr>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, quam praesentium ipsa quaerat ducimus reiciendis facilis, assumenda nobis, debitis beatae officia maiores odit sed voluptates illo cum voluptate dolorem? Minus cupiditate tempore reprehenderit quas fugit. 
+                    <figure class="figure float-left text-secondary px-3">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlhiyjToS4vgqPDf_ip_MdI8B7RKbfOlCCLsb9qH8d1PPN-rj5TA" class="figure-img img-fluid rounded img-thumbnail" alt="demo picture">
+                        <figcaption class="figure-caption">Demo figure</fig-capti>
+                    </figure>
+                    Voluptates totam dolorum repellat voluptatibus deserunt dolorem molestias inventore doloribus aperiam quia id, iusto fuga itaque facilis cupiditate voluptas suscipit ullam repudiandae. Error alias obcaecati, deserunt quod illum doloribus saepe. Nisi pariatur sequi architecto, fugiat sit ipsa odit, non consequatur mollitia quisquam, dolor quam molestias? Nemo labore illo, nisi recusandae cupiditate similique ipsa aliquid, soluta saepe obcaecati molestiae, pariatur eveniet repellat cumque ullam culpa id? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque, ullam id quasi laboriosam atque et? A provident amet cupiditate aut maiores nulla facere illum dolor repellat? Veniam ex eligendi obcaecati.</p>
+                </div>
+                <div class="tab-pane" id="tab2">
+                    <h3 class="text-center">Pane 2</h3><hr>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel distinctio, omnis corporis eum voluptas vitae error magni dignissimos ullam culpa esse maiores recusandae sapiente amet harum in impedit suscipit ducimus eveniet! Nobis molestiae magni tempora, repudiandae animi impedit sapiente sunt voluptates repellendus debitis tenetur, maxime placeat, sint aliquam perspiciatis eum? Asperiores quidem temporibus omnis? Dignissimos illum dolore consequatur tenetur odio natus facilis maiores veniam beatae! Quasi quae amet vel, ullam laborum tempore magni animi aliquid tempora officia iste minima deserunt!</p>
+                    <div class="col-12 rext-center">
+                        <img src="img/download (1).svg" class="img-fluid rounded d-block mt-5" style="margin: 0 auto;" alt="pic">
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab3">
+                    <h3 class="text-center">Pane 3</h3><hr>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, vitae voluptates libero velit eum consequatur, pariatur saepe fugiat earum laudantium aperiam iusto fugit laborum quo quas in consectetur corrupti ipsum qui repudiandae recusandae. Possimus iste quas consectetur minima excepturi necessitatibus impedit quasi dolor officia optio corrupti repellendus, nisi eveniet maiores neque molestias pariatur alias, esse, amet soluta aperiam voluptatibus earum nemo consequatur. Delectus enim rem labore voluptas iusto sunt, officiis eligendi soluta in, itaque doloribus totam vitae, pariatur explicabo. Modi.</p>
+                    <div class="text-center mt-5"><img src="img/download.png" alt="demo picture"></div>
+                </div>
+                <div class="tab-pane" id="tab4">
+                    <h3 class="text-center">Pane 4</h3><hr>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores perspiciatis totam, et, doloribus fuga laudantium consectetur, aliquid ducimus ab iusto fugit tenetur doloremque exercitationem saepe ut excepturi nihil eos expedita dignissimos. </p>
+                    <p>Veritatis minus, iure fugit eius id in enim esse officia placeat, similique, quas corrupti tempora incidunt ducimus quos expedita aliquam maxime provident? Rem, minus, delectus obcaecati facere ducimus asperiores illo enim blanditiis adipisci facilis, reiciendis voluptas tenetur? Blanditiis, quisquam doloribus vero unde maxime id iusto quasi? Ipsam, tempore animi? Praesentium iure pariatur nisi sit dolores assumenda perferendis quibusdam molestiae facere. Iure laudantium similique, ea sit dolorum adipisci inventore?</p>
+                    <p>Quis consectetur eveniet tempora optio assumenda error quaerat rerum saepe perferendis? Illo voluptatem quisquam nemo ab expedita fuga, pariatur ullam provident, non quod, maiores fugit accusantium corrupti deserunt beatae qui voluptas dolore eaque? Doloremque unde quia, amet quo incidunt nostrum quas, reprehenderit similique, corporis obcaecati voluptate soluta nulla ducimus inventore laborum dolorum aliquam recusandae aut rerum autem laboriosam!</P>
+                    <p>Doloremque magnam unde id quas omnis nisi aut nemo, numquam maxime provident cumque ea placeat consectetur expedita recusandae! Obcaecati ea voluptatem consequuntur reprehenderit pariatur. Perspiciatis reiciendis distinctio voluptatem rem, quidem pariatur inventore eos numquam laborum. Ad architecto placeat quam odit suscipit, quos sequi?</p>
+                </div>
+                <div class="tab-pane" id="tab5">
+                    <h3 class="text-center">Pane 5</h3><hr>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi consectetur harum reiciendis perspiciatis assumenda, porro nemo dignissimos nesciunt eligendi accusamus dolorum aperiam. Quisquam incidunt eligendi officia laborum architecto, aperiam eos repellat facere magnam et perspiciatis ad debitis minima recusandae libero pariatur similique eius atque laboriosam animi illum expedita? Dolores tempora alias ducimus. Ea, autem! Repudiandae iusto officiis blanditiis eos officia!</p>
+                    <div class="col-12 rext-center">
+                        <img src="img/banochkin.com-bootstrap-4.jpg" id="BootstrapLogo" class="img-fluid rounded d-block" style="margin: 0 auto;" alt="Bottstrap Logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagenation -->
+        <div class="alert alert-info alert-dismissible mt-5" role="alert">
+            <strong>Pagrnation demo below</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-lable="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+
+        <div class="row">
+            <div id="page1">
+                <h5>Page 1</h5>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea, nemo ipsum? Provident vitae dolorum sint necessitatibus eius nisi nemo voluptate. Itaque dolor fuga alias quisquam blanditiis consequatur voluptatem libero. Facere?
+            </div>
+            <div id="page2">
+                <h5>Page 2</h5>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero quod sed reiciendis aliquid officia, harum veniam voluptatum non exercitationem totam quisquam. Perferendis modi quisquam nihil natus, illo quae ratione vero.
+            </div>
+            <div id="page3">
+                <h5>Page 3</h5>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad quibusdam quisquam excepturi adipisci nemo itaque ut aliquid provident consequuntur aut, accusamus vero saepe nostrum eum laboriosam cum. Itaque, quia quidem.
+            </div>
+            <nav aria-label="Page navigation">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a href="" class="page-link">
+                            <span aria-label="Page navigation example">&laquo;</span>
+                        </a>
+                        <li class="page-item"><a href="#page1" class="page-link">1</a></li>
+                        <li class="page-item"><a href="#page2" class="page-link">2</a></li>
+                        <li class="page-item"><a href="#page3" class="page-link">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                              <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </div>
+    
     <footer class="footer bg-dark mt-2">
         <div class="container"> 
             <span class="text-muted"><i>Hengyu Shi 2019</i></span>  <span class="text-muted ml-5">All Rights Reserved</span>
